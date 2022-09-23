@@ -64,7 +64,6 @@ echo '<?xml version="1.0" encoding="UTF-8"?>' > ${OUTPUTFILE}
 echo '<testsuites>' >> ${OUTPUTFILE}
 for f in ${INPUTDIR}/*.xml
 do
-  echo "test"
     echo $(striphead ${f}) >> ${OUTPUTFILE}
 done
 
