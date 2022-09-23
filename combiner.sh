@@ -23,7 +23,7 @@ OUTPUTFILE=""
 
 # arg 1 = input file
 function striphead() {
-    sed 1,$(expr $(grep -m1 -n "<testsuite" $1 | cut -f1 -d:) - 1)d $1
+  sed 1,2d $1
 }
 
 function error() {
@@ -64,6 +64,7 @@ echo '<?xml version="1.0" encoding="UTF-8"?>' > ${OUTPUTFILE}
 echo '<testsuites>' >> ${OUTPUTFILE}
 for f in ${INPUTDIR}/*.xml
 do
+  echo "test"
     echo $(striphead ${f}) >> ${OUTPUTFILE}
 done
 
