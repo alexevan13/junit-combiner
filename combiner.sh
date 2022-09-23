@@ -23,8 +23,8 @@ OUTPUTFILE=""
 
 # arg 1 = input file
 function striphead() {
-  sed 1,2d $1
-  sed -i '$ d' $1
+  sed '1,2d; $d' $1
+  
 }
 
 function error() {
